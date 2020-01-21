@@ -1,0 +1,10 @@
+* {
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.App h1 {
+  margin-bottom: 3%;
+  margin-top: 3%;
+  text-align: center;
+}
