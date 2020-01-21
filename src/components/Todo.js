@@ -8,10 +8,13 @@ export default function Todo() {
   return (
     <div>
       <button onClick={() => dispatch({ type: "ADD" })}>New Todo</button>
+      <button onClick={() => dispatch({ type: "CLEAR" })}>
+        Clear Completed
+      </button>
       <br />
       <br />
       {state.map(item => (
-        <TodoItem key={item.id} {...item}></TodoItem>
+        <TodoItem key={item.id} {...item} dispatch={dispatch}></TodoItem>
       ))}
     </div>
   );

@@ -1,9 +1,7 @@
 import React, { useContext } from "react";
 import { TodoContext } from "./context/TodoContext";
 
-export default function TodoItem({ id, completed, text }) {
-  const [state, dispatch] = useContext(TodoContext);
-
+export default function TodoItem({ id, completed, text, dispatch }) {
   return (
     <div
       style={{
