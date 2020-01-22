@@ -1,23 +1,27 @@
-import React, { useContext } from "react";
-import { TodoContext } from "./context/TodoContext";
+import React from "react";
 
-export default function TodoItem({ id, completed, text, dispatch }) {
+export default function TodoItem({ id, completed, item, dispatch }) {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "space-between"
-      }}>
-      <input
-        type='checkbox'
-        checked={completed}
-        onChange={() => dispatch({ type: "COMPLETED", payload: id })}
-      />
-      <input type='text' defaultValue={text} />
-      <button onClick={() => dispatch({ type: "DELETE", payload: id })}>
-        Delete
-      </button>
-    </div>
+    <>
+      <div
+        className={`todo${completed ? ` completed` : ""}`}
+        style={{
+          margin: "0 auto",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          width: "50%"
+        }}>
+        <input
+          type='checkbox'
+          checked={completed}
+          onChange={() => dispatch({ type: "COMPLETED", payload: id })}
+        />
+        <p>{item}</p>
+        <button onClick={() => dispatch({ type: "DELETE", payload: id })}>
+          Delete
+        </button>
+      </div>
+    </>
   );
 }

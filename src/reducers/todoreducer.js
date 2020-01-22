@@ -1,8 +1,8 @@
 export const initialState = [
   {
-    item: "Learn about reducers",
-    completed: false,
-    id: Date.now()
+    id: Date.now(),
+    item: "test",
+    completed: false
   }
 ];
 
@@ -13,7 +13,7 @@ export const todoreducer = (state, action) => {
         ...state,
         {
           id: Date.now(),
-          text: "",
+          item: action.payload,
           completed: false
         }
       ];
