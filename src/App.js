@@ -11,7 +11,7 @@ function App() {
   return (
     <div className='App'>
       <h1>Todo App</h1>
-      <TodoContext.Provider value={[state, dispatch]}>
+      <TodoContext.Provider value={{state, dispatch}}>
         <TodoForm />
         <Todo />
       </TodoContext.Provider>
